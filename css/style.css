@@ -8,12 +8,12 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/fundo1.jpg');
+    background-image: url('../img/fundo1.jpg'); /* Verifique se este caminho está correto */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     filter: blur(2px);
-    z-index: -1;
+    z-index: -1; /* Certifique-se de que o conteúdo está acima do background */
 }
 
 .background::before {
@@ -24,6 +24,58 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* Estilo para a imagem de fundo da página de histórico com desfoque e filtro */
+.backhistorico {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/fundo2.jpg'); /* Verifique se este caminho está correto */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(2px);
+    z-index: -1;
+}
+
+.backhistorico::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.427);
+    z-index: -1;
+}
+
+/* Estilo para a imagem de fundo da página de equações com desfoque e filtro */
+.backequacoes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/fundo3.jpg'); /* Verifique se este caminho está correto */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(2px);
+    z-index: -1;
+}
+
+.backequacoes::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.427);
     z-index: -1;
 }
 
@@ -39,46 +91,67 @@ body {
     align-items: center;
 }
 
-/* Estilo do contêiner do cabeçalho (logo e barra de navegação) */
+/* Estilo do contêiner do cabeçalho (logo e título) */
 .header {
     display: flex;
-    align-items: center;
+    align-items: center; /* Centraliza verticalmente o conteúdo */
     justify-content: space-between;
-    width: 100%;
     padding: 10px 20px;
-    background: none;
+    width: 100%; /* Garante que o cabeçalho ocupe toda a largura */
+    height: 60px; /* Altura consistente em todas as páginas */
+    background: none; /* Remove o fundo do cabeçalho */
+    border-bottom: none; /* Remove a borda inferior */
 }
 
 /* Estilo da logo */
 .logo {
-    width: 150px;
-    height: auto;
-    object-fit: contain;
-    margin-right: 20px;
+    left: 0;
+    width: 200px; /* Tamanho consistente para a logo */
+    height: auto; /* Mantém a proporção da logo */
+    margin-right: 10px;
+    margin-left: 10px;
+    object-fit: contain; /* Garante que a logo mantenha a proporção dentro do tamanho especificado */
+}
+
+/* Estilo do título da aplicação */
+.app-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2em;
+    color: #ffffff;
+    text-align: left;
+    flex-grow: 1; /* Permite que o título ocupe o espaço restante entre a logo e o espaço vazio */
+    margin-left: 60px; /* Espaço à esquerda para não sobrepor a logo */
 }
 
 /* Estilos da barra de menus */
 .navbar {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
     display: flex;
-    justify-content: flex-end;
-    flex-grow: 1;
+    justify-content: flex-end; /* Alinha os botões no canto superior direito */
+    padding: 10px 20px;
+    background: none; /* Remove o fundo da barra de menus */
+    box-shadow: none; /* Remove a sombra da barra de menus */
+    position: relative; /* Mantém a barra de menus no fluxo normal do documento */
+    z-index: 1000; /* Garante que a barra fique acima de outros elementos */
 }
 
 .nav-btn {
-    color: #000;
+    position: relative;
+    color: #ffffff; /* Cor do texto dos botões */
     text-decoration: none;
     font-size: 1.2em;
     margin: 0 15px;
     padding: 10px 20px;
     transition: box-shadow 0.3s, color 0.3s;
-    border-radius: 5px;
-    background: none;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px; /* Bordas arredondadas para suavizar a aparência */
+    background: none; /* Remove o fundo dos botões */
+    box-shadow: none; /* Sombra para os botões */
 }
 
 .nav-btn:hover {
-    color: #05f3ff;
-    box-shadow: 0 0 15px 8px #05f3ff;
+    color: #05f3ff; /* Mudança na cor do texto ao passar o mouse */
+    box-shadow: 0 0 15px 8px #05f3ff; /* Aumenta a sombra ao passar o mouse */
 }
 
 /* Estilos da calculadora */
@@ -93,6 +166,7 @@ body {
     align-items: center;
     margin-top: 40px;
     z-index: 1;
+    align-self: center; /* Garante que a calculadora fique centralizada */
 }
 
 #display {
@@ -105,13 +179,13 @@ body {
     border: none;
     background-color: #000000;
     border-radius: 5px;
-    color: #ffffff;
+    color: #ffffff; /* Cor do texto no display */
 }
 
 /* Estilos dos botões da calculadora */
 .buttons {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* Organiza os botões em 4 colunas */
     gap: 10px;
 }
 
@@ -132,7 +206,7 @@ body {
 }
 
 .btn-clear {
-    background-color: #d9534f;
+    background-color: #d9534f; /* Vermelho para o botão C */
     color: white;
 }
 
@@ -141,52 +215,135 @@ body {
 }
 
 .btn-equals {
-    background-color: #05f3ff;
+    background-color: #05f3ff; /* Azul para o botão = */
     color: white;
 }
 
 .btn-equals:hover {
-    background-color: #07f727;
+    background-color: #07f727; /* Verde escuro ao passar o mouse no botão = */
 }
 
-/* Estilo do título da aplicação */
-.app-title {
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.8em;
-    color: #000000;
+/* Estilos do contêiner de histórico */
+.history {
+    width: 100%;
+    max-width: 600px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-top: 20px;
+    margin: 100px auto;
+}
+
+.history h2 {
+    margin-bottom: 20px;
+}
+
+#history-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+#history-list li {
+    background-color: #f1f1f1;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Estilos específicos para a calculadora de equações */
+.equation-calculator {
+    margin-top: 10px; /* Empurra o conteúdo para baixo, longe da barra de menus */
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#solution-1st-degree,
+#solution-2nd-degree {
+    margin-top: 10px;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.equation-calculator h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.equation-calculator input {
+    margin: 5px;
+    padding: 5px;
+    width: 300px;
+}
+
+.equation-calculator button {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.equation-calculator button:hover {
+    background-color: #45a049;
+}
+
+#equation-graph {
+    background-color: #ffffff; /* Cor de fundo branca para o gráfico */
+    border: 1px solid #000; /* Borda preta ao redor do gráfico */
+    border-radius: 5px; /* Bordas arredondadas para o gráfico */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 20px auto; /* Centralizar e adicionar espaço acima do gráfico */
 }
 
 /* Media Queries para telas menores */
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        align-items: center;
+    .app-title {
+        font-size: 1.5em;
     }
 
     .navbar {
+        justify-content: center; /* Centraliza os botões de navegação em telas pequenas */
         margin-top: 10px;
     }
 
-    .app-title {
-        font-size: 1.5em;
-        margin-top: 15px;
+    .header {
+        flex-direction: column; /* Empilha logo e barra de navegação em telas pequenas */
     }
 }
 
 @media (max-width: 480px) {
     .app-title {
         font-size: 1.2em;
+        margin-top: 20px;
     }
 
-    .navbar {
-        flex-direction: column;
-        align-items: center;
+    /* Movendo o título para baixo da calculadora em telas muito pequenas */
+    .app-title {
+        order: 2; /* Move a ordem do título para depois da calculadora */
+        margin-top: 20px;
     }
 
-    .nav-btn {
-        margin: 5px 0;
-        padding: 10px 15px;
+    .calculator {
+        margin-top: 10px; /* Ajusta a margem superior da calculadora */
+    }
+    
+    .header {
+        height: auto; /* Permite que a altura se ajuste conforme necessário */
+    }
+
+    /* Opcional: Ocultar o título em telas muito pequenas */
+    .app-title {
+        display: none; /* Oculta o título em telas muito pequenas */
     }
 }
