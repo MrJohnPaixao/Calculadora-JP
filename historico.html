@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Cálculos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon"> <!-- Linha para o favicon -->
+</head>
+<body>
+
+    <!-- Div para a imagem de fundo -->
+    <div class="backhistorico"></div>
+
+    <!-- Contêiner para o título geral e logo -->
+    <header class="header">
+        <img src="img/logo4.png" alt="Logo" class="logo">
+        <h1 class="app-title">Soluções Rápidas para Cálculos Complexos</h1>
+    </header>
+    
+    <!-- Barra de menus -->
+    <div class="navbar">
+        <a href="index.html" class="nav-btn">Início</a>
+        <a href="historico.html" class="nav-btn active">Histórico</a>
+        <a href="#" class="nav-btn">Sobre</a>
+    </div>
+    
+    <!-- Conteúdo do Histórico -->
+    <div class="history">
+        <h2>Histórico de Cálculos</h2>
+        <ul id="history-list">
+            <!-- Aqui serão exibidos os resultados -->
+        </ul>
+        <button class="btn" onclick="clearHistory()">Limpar Histórico</button>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

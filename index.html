@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora JP</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon"> <!-- Linha para o favicon -->
+</head>
+<body>
+    <!-- Div para a imagem de fundo -->
+    <div class="background"></div>
+    
+    <!-- Contêiner para o título geral e logo -->
+    <header class="header">
+        <img src="img/logo4.png" alt="Logo" class="logo">
+        <h1 class="app-title">Soluções Rápidas para Cálculos Complexos</h1>
+    </header>
+    
+    <!-- Barra de menus -->
+    <div class="navbar">
+        <a href="index.html" class="nav-btn">Início</a>
+        <a href="historico.html" class="nav-btn">Histórico</a>
+        <a href="equacoes.html" class="nav-btn">Equações</a>
+        <a href="#" class="nav-btn">Sobre</a>
+    </div>
+    
+    <!-- Conteúdo da Calculadora -->
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        <div class="buttons">
+            <button class="btn btn-clear" onclick="clearDisplay()">C</button>
+            <button class="btn btn-clear" onclick="deleteLast()">DEL</button>
+            <button class="btn" onclick="calculateSquareRoot()">√</button>
+            <button class="btn" onclick="appendOperator('/')">/</button>
+            <button class="btn" onclick="appendOperator('*')">*</button>
+            <button class="btn" onclick="appendNumber('7')">7</button>
+            <button class="btn" onclick="appendNumber('8')">8</button>
+            <button class="btn" onclick="appendNumber('9')">9</button>
+            <button class="btn" onclick="appendOperator('-')">-</button>
+            <button class="btn" onclick="appendNumber('4')">4</button>
+            <button class="btn" onclick="appendNumber('5')">5</button>
+            <button class="btn" onclick="appendNumber('6')">6</button>
+            <button class="btn" onclick="appendOperator('+')">+</button>
+            <button class="btn" onclick="appendNumber('1')">1</button>
+            <button class="btn" onclick="appendNumber('2')">2</button>
+            <button class="btn" onclick="appendNumber('3')">3</button>
+            <button class="btn" onclick="appendNumber('0')">0</button>
+            <button class="btn" onclick="calculatePercentage()">%</button>
+            <button class="btn" onclick="appendNumber('.')">.</button>
+            <button class="btn btn-equals" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

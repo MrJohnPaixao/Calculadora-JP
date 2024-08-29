@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Equações</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon"> <!-- Linha para o favicon -->
+</head>
+<body>
+
+<!-- Div para a imagem de fundo -->
+<div class="backequacoes"></div>
+
+    <!-- Contêiner para o título geral e logo -->
+    <header class="header">
+        <img src="img/logo4.png" alt="Logo" class="logo">
+        <h1 class="app-title">Soluções Rápidas para Cálculos Complexos</h1>
+    </header>
+    
+    <!-- Barra de menus -->
+    <div class="navbar">
+        <a href="index.html" class="nav-btn">Início</a>
+        <a href="historico.html" class="nav-btn">Histórico</a>
+        <a href="equacoes.html" class="nav-btn active">Equações</a>
+        <a href="#" class="nav-btn">Sobre</a>
+    </div>
+    
+    <!-- Conteúdo da Calculadora de Equações -->
+    <div class="equation-calculator">
+        <h2>Calculadora de Equações</h2>
+
+        <!-- Equação de 1º Grau -->
+        <div>
+            <h3>Equação de 1º Grau (ax + b = 0)</h3>
+            <input type="text" id="coef-a1" placeholder="Coeficiente a">
+            <input type="text" id="coef-b1" placeholder="Coeficiente b">
+            <button onclick="solveFirstDegree()">Resolver Equação de 1º Grau</button>
+            <p id="solution-1st-degree"></p>
+        </div>
+
+        <!-- Equação de 2º Grau -->
+        <div>
+            <h3>Equação de 2º Grau (ax² + bx + c = 0)</h3>
+            <input type="text" id="coef-a2" placeholder="Coeficiente a">
+            <input type="text" id="coef-b2" placeholder="Coeficiente b">
+            <input type="text" id="coef-c2" placeholder="Coeficiente c">
+            <button onclick="solveSecondDegree()">Resolver Equação de 2º Grau</button>
+            <p id="solution-2nd-degree"></p>
+            <canvas id="equation-graph" width="400" height="400"></canvas>
+        </div>
+    </div>
+
+    <script src="js/equacoes.js"></script>
+</body>
+</html>
