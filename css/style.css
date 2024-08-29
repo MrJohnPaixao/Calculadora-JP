@@ -27,58 +27,6 @@
     z-index: -1;
 }
 
-/* Estilo para a imagem de fundo da página de histórico com desfoque e filtro */
-.backhistorico {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../img/fundo2.jpg'); /* Verifique se este caminho está correto */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: blur(2px);
-    z-index: -1;
-}
-
-.backhistorico::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.427);
-    z-index: -1;
-}
-
-/* Estilo para a imagem de fundo da página de equações com desfoque e filtro */
-.backequacoes {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../img/fundo3.jpg'); /* Verifique se este caminho está correto */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: blur(2px);
-    z-index: -1;
-}
-
-.backequacoes::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.427);
-    z-index: -1;
-}
-
 /* Estilos gerais do body */
 body {
     margin: 0;
@@ -94,38 +42,36 @@ body {
 /* Estilo do contêiner do cabeçalho (logo e título) */
 .header {
     display: flex;
-    align-items: center; /* Centraliza verticalmente o conteúdo */
+    align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    width: 100%; /* Garante que o cabeçalho ocupe toda a largura */
-    height: 60px; /* Altura consistente em todas as páginas */
-    background: none; /* Remove o fundo do cabeçalho */
-    border-bottom: none; /* Remove a borda inferior */
+    width: 100%;
+    height: 150px;
+    background: none;
+    border-bottom: none;
 }
 
 /* Estilo da logo */
 .logo {
     left: 0;
-    width: 200px; /* Tamanho consistente para a logo */
-    height: auto; /* Mantém a proporção da logo */
-    margin-right: 10px;
-    margin-left: 10px;
-    object-fit: contain; /* Garante que a logo mantenha a proporção dentro do tamanho especificado */
+    width: 150px;
+    height: auto;
+    margin-right: 20px;
+    object-fit: contain;
 }
 
 /* Estilo do título da aplicação */
 .app-title {
     font-family: 'Raleway', sans-serif;
     font-size: 2em;
-    color: #ffffff;
+    color: #000000;
     text-align: left;
-    flex-grow: 1; /* Permite que o título ocupe o espaço restante entre a logo e o espaço vazio */
-    margin-left: 60px; /* Espaço à esquerda para não sobrepor a logo */
+    flex-grow: 1;
+    margin-left: 220px;
 }
 
 /* Estilos da barra de menus */
 .navbar {
-    font-family: Arial, Helvetica, sans-serif;
     width: 100%;
     display: flex;
     justify-content: flex-end; /* Alinha os botões no canto superior direito */
@@ -138,7 +84,7 @@ body {
 
 .nav-btn {
     position: relative;
-    color: #ffffff; /* Cor do texto dos botões */
+    color: #000; /* Cor do texto dos botões */
     text-decoration: none;
     font-size: 1.2em;
     margin: 0 15px;
@@ -146,7 +92,7 @@ body {
     transition: box-shadow 0.3s, color 0.3s;
     border-radius: 5px; /* Bordas arredondadas para suavizar a aparência */
     background: none; /* Remove o fundo dos botões */
-    box-shadow: none; /* Sombra para os botões */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra para os botões */
 }
 
 .nav-btn:hover {
@@ -304,4 +250,40 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: block;
     margin: 20px auto; /* Centralizar e adicionar espaço acima do gráfico */
+}
+
+/* Media Queries para telas menores */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto; /* Permite que o cabeçalho se ajuste automaticamente à altura do conteúdo */
+        align-items: center;
+    }
+
+    .logo {
+        margin-right: 0;
+        margin-bottom: 10px; /* Espaço entre a logo e o título em telas menores */
+    }
+
+    .app-title {
+        font-size: 1.5em; /* Reduz o tamanho da fonte do título em telas menores */
+        margin-left: 0;
+        text-align: center; /* Centraliza o título em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .app-title {
+        font-size: 1.2em; /* Ajuste adicional para telas muito pequenas */
+    }
+
+    .navbar {
+        flex-direction: column; /* Alinha os botões verticalmente em telas muito pequenas */
+        align-items: center;
+    }
+
+    .nav-btn {
+        margin: 5px 0; /* Ajusta o espaçamento entre os botões na barra de navegação */
+        padding: 10px 15px;
+    }
 }
